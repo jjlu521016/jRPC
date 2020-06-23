@@ -12,4 +12,11 @@
     <artifactId>jrpc-test</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>io.jjlu.jrpc</groupId>
+            <artifactId>jrpc-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
