@@ -15,6 +15,7 @@
         <module>jrpc-test</module>
         <module>jrpc-filter</module>
         <module>jrpc-common</module>
+        <module>jrpc-message</module>
     </modules>
 
     <properties>
@@ -23,6 +24,10 @@
         <spring.version>5.2.7.RELEASE</spring.version>
         <sj4fj.version>1.7.30</sj4fj.version>
         <netty.version>4.1.50.Final</netty.version>
+        <kryo.version>4.0.2</kryo.version>
+        <hessian.version>4.0.63</hessian.version>
+        <protobuf.version>3.12.2</protobuf.version>
+        <pool2.version>2.8.0</pool2.version>
     </properties>
     <dependencies>
         <dependency>
@@ -97,7 +102,38 @@
             <artifactId>spring-aspects</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
     </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>kryo</artifactId>
+                <version>${kryo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>${hessian.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${pool2.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <finalName>jRPC</finalName>
         <plugins>
